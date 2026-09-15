@@ -16,21 +16,21 @@ Release date: 2026.09.15
 
 ### This release bringing 3 important updates and other improvements and bug fixes:
 
-#### 1. Framework Migration
+#### 1. Framework Migration 🚀
 
 **Migrated the development framework from .NET Framework 4.8 to .NET 10**. **.NET 10** can bring better support for modern Windows.
 
-#### 2. Search/Filter Function for Item Lists
+#### 2. Search/Filter Function for Item Lists 🔍
 
 **Added search/filter feature for menu item lists**. Now you can filter the items you want by keywords.
 
-#### 3. Better internationalization support
+#### 3. Better internationalization support 🌏
 
 - Make English as the default display language
 
 - Change some Chinese comments in the source code to English
 
-#### 4. Other improvements and fixes
+#### 4. Other improvements and fixes ✔
 
 **Welcome feedback, issue reports, and pull requests ❤.**
 
