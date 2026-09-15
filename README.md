@@ -8,7 +8,7 @@
 
 ## You can easily manage your Windows 🖱️ right-click context menu items with this software.
 
-> This project ContextMenuRector is based on the long term inactive project [ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager/)。
+> This project ContextMenuRector is based on the long term inactive project [ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager/)
 
 ## Latest Release Note: ContextMenuRector v1.0.0
 
