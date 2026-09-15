@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows8.0</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>False</UseWPF>
+    <RootNamespace>ContextMenuManager</RootNamespace>
+    <AssemblyName>ContextMenuRector</AssemblyName>
+    <ApplicationManifest>Properties\App.manifest</ApplicationManifest>
+    <Deterministic>true</Deterministic>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!-- Enable .NET analyzers to surface WinForms designer issues -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <NoWarn>$(NoWarn)</NoWarn>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\Contributors.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Contributors.ini">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 源代码使用 SDK 隐式包含，因此不显式列出 Compile 通配符，避免重复项 -->
+    <None Include="App.config" />
+    <None Include="Properties\App.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator></Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Resources\Images\Search.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- $(SolutionDir) 只在通过 .sln 构建时才有定义；直接构建本 .csproj 时它是字面量 "*Undefined*"，
+       会让下面的复制生成非法路径（MSB3021）。缺失时回退到项目上一级目录（即解决方案所在目录）。 -->
+  <PropertyGroup>
+    <RepoRoot Condition="'$(SolutionDir)' == '' or '$(SolutionDir)' == '*Undefined*'">$(MSBuildProjectDirectory)\..\</RepoRoot>
+    <RepoRoot Condition="'$(RepoRoot)' == ''">$(SolutionDir)</RepoRoot>
+    <LanguagesDir>$(RepoRoot)Languages\</LanguagesDir>
+    <ApplicationIcon>Properties\AppIcon.ico</ApplicationIcon>
+    <Copyright>Copyright © 2026-2027 Li Guanglin. All Rights Reserved.</Copyright>
+    <Description></Description>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <!-- Create directories if missing -->
+    <MakeDir Directories="$(TargetDir)Config\Languages" />
+    <MakeDir Directories="$(TargetDir)Config\Dictionaries\Web" />
+
+    <!-- Copy single language file if exists -->
+    <MakeDir Directories="$(LanguagesDir)" />
+    <Copy Condition="Exists('$(ProjectDir)Properties\Resources\Texts\AppLanguageDic.ini')" SourceFiles="$(ProjectDir)Properties\Resources\Texts\AppLanguageDic.ini" DestinationFiles="$(LanguagesDir)zh-CN.ini" SkipUnchangedFiles="true" />
+
+    <!-- Copy Languages directory from solution if exists -->
+    <ItemGroup>
+      <SolutionLanguagesFiles Include="$(LanguagesDir)**\*.*" Condition="Exists('$(LanguagesDir)')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(SolutionLanguagesFiles)" DestinationFiles="$(TargetDir)config\Languages\%(RecursiveDir)%(Filename)%(Extension)" SkipUnchangedFiles="true" Condition="Exists('$(LanguagesDir)')" />
+
+    <!-- Copy Texts resources to target dictionaries -->
+    <ItemGroup>
+      <TextsFiles Include="$(ProjectDir)Properties\Resources\Texts\**\*.*" Condition="Exists('$(ProjectDir)Properties\Resources\Texts')" />
+    </ItemGroup>
+    <Copy SourceFiles="@(TextsFiles)" DestinationFiles="$(TargetDir)Config\Dictionaries\Web\%(RecursiveDir)%(Filename)%(Extension)" SkipUnchangedFiles="true" Condition="Exists('$(ProjectDir)Properties\Resources\Texts')" />
+
+    <!-- Remove the copied AppLanguageDic.ini from target if exists -->
+    <Delete Files="$(TargetDir)Config\Dictionaries\Web\AppLanguageDic.ini" ContinueOnError="true" />
+  </Target>
+
+</Project>

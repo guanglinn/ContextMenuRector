@@ -1,0 +1,8 @@
+ContextMenuRector/bin/
+ContextMenuRector/obj/
+.vs/
+*.csproj.user
+
+Inno Setup/
+
+.claude/
