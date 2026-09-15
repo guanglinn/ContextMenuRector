@@ -14,7 +14,7 @@
 
 Release date: 2026.09.15
 
-### This release bringing 3 important updates and other improvements and bug fixes:
+### This release brings 3 important updates and other improvements and bug fixes:
 
 #### 1. Framework Migration 🚀
 
@@ -26,9 +26,9 @@ Release date: 2026.09.15
 
 #### 3. Better internationalization support 🌏
 
-- Make English as the default display language
+- Made English as the default display language
 
-- Change some Chinese comments in the source code to English
+- Changed some Chinese comments in the source code to English
 
 #### 4. Other improvements and fixes ✔
 

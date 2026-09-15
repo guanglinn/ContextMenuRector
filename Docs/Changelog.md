@@ -14,7 +14,7 @@ This release bringing 3 important updates and other improvements and bug fixes:
   
 - **Better internationalization support** 🌏
 
-  Make English as the default display language and improved some translations.
+  Made English as the default display language and improved some translations.
 
 - **Other improvements and fixes** ✔
 
