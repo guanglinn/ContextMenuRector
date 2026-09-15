@@ -8,21 +8,21 @@
 
 ##  该软件可以让你轻松地管理你的 Windows 右键菜单项。
 
-> 该项目 ContextMenuRector 基于长期不活跃的项目 [ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager/)。
+> 该项目 ContextMenuRector 基于长期不活跃的项目 [ContextMenuManager](https://github.com/BluePointLilac/ContextMenuManager/)
 
 ## 最新发布说明：ContextMenuRector v1.0.0
 
-发布日期：2026.09.14
+发布日期：2026.09.15
 
 ### 主要有 3 个重要更新以及其他改进和 BUG 修复：
 
 #### 1. 框架迁移 🚀
 
-**将开发框架从 .NET Framework 4.8 迁移到 .NET 10**。**.NET 10** 可以为现代 Windows 带来更好的支持。
+**将开发框架从 .NET Framework 4.8 迁移到 .NET 10**。新框架可以为现代 Windows 带来更好的支持。
 
 #### 2. 为条目列表增加搜索/过滤功能 🔍
 
-**为右键菜单条目列表添加搜索/过滤功能**。现在你可以输入关键字来过滤你想要的列表条目。
+**为右键菜单条目列表添加搜索/过滤功能**。现在你可以通过输入关键字来过滤你想要的列表条目。
 
 #### 3. 更好的国际化支持 🌏
 
@@ -39,7 +39,7 @@
 - [拉取请求](https://github.com/guanglinn/ContextMenuRector/pulls)
 
 ## 安装软件
-进入该软件下载页面 [Github Releases][https://github.com/guanglinn/ContextMenuRector/releases ]，选择最新版下载即可。
+进入该软件下载页面 [Github Releases][https://github.com/guanglinn/ContextMenuRector/releases ]，选择最新版本的 `.exe` 文件下载安装即可。
 
 ## 主要功能
 * 启用或禁用文件、文件夹、新建、发送到、打开方式、自定义文件格式、IE浏览器、WinX等右键菜单项目
@@ -60,7 +60,8 @@
 
 ## 资源引用
 
-* 主图标: [EasyIcon](https://www.easyicon.cc/)
+* 主图标：[EasyIcon](https://www.easyicon.cc/)
 
-* 按钮图标: [Iconfont](https://www.iconfont.cn/)
+* 按钮图标：[Iconfont](https://www.iconfont.cn/)
 
+![](Screenshots/AppImage.png)

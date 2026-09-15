@@ -40,7 +40,7 @@ Release date: 2026.09.15
 
 ## Installation
 
-Download this software here [Github Releases][https://github.com/guanglinn/ContextMenuRector/releases ], then open the .exe file to install it.
+Download this software (`.exe` file) here [Github Releases][https://github.com/guanglinn/ContextMenuRector/releases ], then open the `.exe` file to install it.
 
 ## Key features
 * Enable and disable context menu options for files, folders, submenus (e.g. Open, Send to), Internet Explorer, and Win+X.
@@ -52,7 +52,7 @@ Download this software here [Github Releases][https://github.com/guanglinn/Conte
 ## Screenshots
 ![](Docs/Screenshots/Screenshot.png)
 
-## Updates
+## Update
 * Program and dictionary updates can be installed within the program, overwriting the original files.
 * Due to limitations with Github and Gitee Raw, the program can only check for updates once a month.  The latest updates can always be found on [Github Releases][GitHub Releases].
 
@@ -67,7 +67,7 @@ Download this software here [Github Releases][https://github.com/guanglinn/Conte
 
 ## Third-party resources usage statement
 
-* Main program icon: [EasyIcon](https://www.easyicon.cc/)
+* Main icons: [EasyIcon](https://www.easyicon.cc/)
 
 * Button icons: [Iconfont](https://www.iconfont.cn/)
 
