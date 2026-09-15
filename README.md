@@ -18,7 +18,7 @@ Release date: 2026.09.15
 
 #### 1. Framework Migration 🚀
 
-**Migrated the development framework from .NET Framework 4.8 to .NET 10**. **.NET 10** can bring better support for modern Windows.
+**Migrated the development framework from .NET Framework 4.8 to .NET 10**. The new framework can bring better support for modern Windows.
 
 #### 2. Search/Filter Function for Item Lists 🔍
 
@@ -32,7 +32,7 @@ Release date: 2026.09.15
 
 #### 4. Other improvements and fixes ✔
 
-**Welcome feedback, issue reports, and pull requests ❤.**
+**Welcome feedback, issue reports, and pull requests!** ❤
 
 - [Report Issues](https://github.com/guanglinn/ContextMenuRector/issues)
 - [Discussions](https://github.com/guanglinn/ContextMenuRector/discussions)
@@ -40,7 +40,7 @@ Release date: 2026.09.15
 
 ## Installation
 
-Download this software (`.exe` file) here [Github Releases][https://github.com/guanglinn/ContextMenuRector/releases ], then open the `.exe` file to install it.
+Download this software (`.exe` file) here [Github Releases](https://github.com/guanglinn/ContextMenuRector/releases), then open the `.exe` file to install it.
 
 ## Key features
 * Enable and disable context menu options for files, folders, submenus (e.g. Open, Send to), Internet Explorer, and Win+X.

@@ -32,7 +32,7 @@
 
 #### 4. 其他改进和 BUG 修复 ✔
 
-**欢迎大家反馈建议、报告问题以及提交拉取请求 ❤。**
+**欢迎大家反馈建议、报告问题以及提交拉取请求！**❤
 
 - [报告问题](https://github.com/guanglinn/ContextMenuRector/issues)
 - [讨论](https://github.com/guanglinn/ContextMenuRector/discussions)
