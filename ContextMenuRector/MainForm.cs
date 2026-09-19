@@ -7,6 +7,7 @@ using ContextMenuRector.Methods;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
@@ -44,13 +45,35 @@ namespace ContextMenuRector
             JumpItem(0, 0);
         }
 
+        private int _savedScrollY;
+        protected override void OnDeactivate(EventArgs e)
+        {
+            base.OnDeactivate(e);
+            if (filterTtarget?.Owner != null)
+            {
+                _savedScrollY = filterTtarget.Owner.AutoScrollPosition.Y;
+            }
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            if (this.WindowState == FormWindowState.Normal && filterTtarget?.Owner != null)
+            {
+                if (_savedScrollY < 0)
+                {
+                    filterTtarget.Owner.AutoScrollPosition = new Point(0, -_savedScrollY);
+                }
+            }
+        }
+
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            // 检测 Ctrl + F
+            // Ctrl + F
             if (keyData == (Keys.Control | Keys.F))
             {
                 searchBox.TextBox.Focus();
-                return true; // 返回 true 表示事件已处理，不再向下传递
+                return true; // Return true to indicate that the event has been processed and will no longer be passed down
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
@@ -618,12 +641,12 @@ namespace ContextMenuRector
 
         private void FirstRunDownloadLanguage()
         {
-            if (AppConfig.IsFirstRun && CultureInfo.CurrentUICulture.Name != "zh-CN")
+            const string defaultLang = "en-US";
+            if (AppConfig.IsFirstRun && CultureInfo.CurrentUICulture.Name != defaultLang)
             {
-                if (AppMessageBox.Show("It is detected that you may be running this program for the first time,\n" +
-                    "and your system display language is not simplified Chinese (zh-CN),\n" +
-                    "do you need to download another language?",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                string msg = $"This system language is not American English ({defaultLang}), " +
+                    $"you may need to download your language ({defaultLang}).";
+                if (AppMessageBox.Show(msg, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     JumpItem(4, 1);
                     languagesBox.ShowLanguageDialog();

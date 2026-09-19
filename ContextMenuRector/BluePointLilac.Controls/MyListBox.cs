@@ -79,7 +79,13 @@ namespace ContextMenuRector.BluePointLilac.Controls
             this.SuspendLayout();
             item.Parent = this;
             item.MouseEnter += (sender, e) => HoveredItem = item;
-            this.MouseWheel += (sender, e) => item.ContextMenuStrip?.Close();
+            this.MouseWheel += (sender, e) =>
+            {
+                if (item.ContextMenuStrip?.Visible == true)
+                {
+                    item.ContextMenuStrip.Close();
+                }
+            };
             void ResizeItem() => item.Width = Owner.Width - item.Margin.Horizontal;
             Owner.Resize += (sender, e) => ResizeItem();
             ResizeItem();
