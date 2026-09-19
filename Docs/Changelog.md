@@ -1,21 +1,22 @@
 ## ContextMenuRector v1.0.0
 
-> 2026.09.15
+> 2026.09.19
 
-This release bringing 3 important updates and other improvements and bug fixes:
+**This release brings 4 key updates and other improvements and bug fixes:**
 
-- **Framework Migration** 🚀
-  
-  Migrated the development framework from .NET Framework 4.8 to **.NET 10**. This can bring better support for modern Windows.
-  
-- **Search/Filter Function for Item Lists** 🔍
-  
-  Added search/filter feature for menu item lists. Now you can filter the items you want by keywords.
-  
-- **Better internationalization support** 🌏
+1. Framework migration 🚀
+  Migrated the development framework **from .NET Framework 4.8 to .NET 10**. The new framework can bring better support for modern Windows.
 
-  Made English as the default display language and improved some translations.
+2. Search/filter function for item the list 🔍
+  Added **search/filter feature for the context menu item list**. Now you can filter the items you want by keywords.
 
-- **Other improvements and fixes** ✔
+3. Better internationalization support 🌏
+   - Made English as the default display language
+   - Changed some Chinese comments in the source code to English
 
-**Welcome feedback, issue reports, and pull requests ❤.**
+4. Scroll position restore 📑
+  Added support for **scroll position restoration function for the list** when the window is displayed from minimized state.
+
+5. Other improvements and fixes ✔
+
+**Welcome feedback, issue reports, and pull requests!** ❤️

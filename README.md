@@ -12,17 +12,17 @@
 
 ## Latest Release Note: ContextMenuRector v1.0.0
 
-Release date: 2026.09.15
+> Release date: 2026.09.19
 
-### This release brings 3 important updates and other improvements and bug fixes:
+### This release brings 4 key updates and other improvements and bug fixes:
 
-#### 1. Framework Migration 🚀
+#### 1. Framework migration 🚀
 
-**Migrated the development framework from .NET Framework 4.8 to .NET 10**. The new framework can bring better support for modern Windows.
+Migrated the development framework **from .NET Framework 4.8 to .NET 10**. The new framework can bring better support for modern Windows.
 
-#### 2. Search/Filter Function for Item Lists 🔍
+#### 2. Search/filter function for item the list 🔍
 
-**Added search/filter feature for menu item lists**. Now you can filter the items you want by keywords.
+Added **search/filter feature for the context menu item list**. Now you can filter the items you want by keywords.
 
 #### 3. Better internationalization support 🌏
 
@@ -30,9 +30,13 @@ Release date: 2026.09.15
 
 - Changed some Chinese comments in the source code to English
 
-#### 4. Other improvements and fixes ✔
+#### 4. Scroll position restore 📑
 
-**Welcome feedback, issue reports, and pull requests!** ❤
+Added support for **scroll position restoration function for the list** when the window is displayed from minimized state.
+
+#### 5. Other improvements and fixes ✔
+
+**Welcome feedback, issue reports, and pull requests!** ❤️
 
 - [Report Issues](https://github.com/guanglinn/ContextMenuRector/issues)
 - [Discussions](https://github.com/guanglinn/ContextMenuRector/discussions)
