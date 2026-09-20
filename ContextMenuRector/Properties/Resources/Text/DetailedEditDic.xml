@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--每个程序为一个 Group，Text 为 Group 项显示文本，GUID 用于判断用户是否安装此程序并决定是否显示该 Group，不设置 GUID 则为常驻菜单，RegPath 为程序相关注册表主路径;
-其相关菜单项目设置作为一个 Item 子元素，Item 的 Text 为该 Item 项显示文本，Tip 为鼠标悬浮在开关上时的提示信息，需要重启资源管理器生效则添加 RestartExplorer;
-Item 的子元素Rule为相关注册表内容，RegPath 省略则默认为 Group 主路径，以\开头则为 Group 主路径的子项路径；
-ValueName 为相关键名，On 为启用键值，Off 为禁用键值；不设置 On 或 Off 属性时，其值为 null，对应注册表键值不存在；
-每个 Item 可能受多个注册表 Rule 影响，按照顺序进行键值判定；判定规则：当有多条规则时，前面的规则注册表键值匹配 On 则为 On，匹配 Off 则为 Off，并终止判断，都不匹配时继续往下判断，若所有规则都不匹配则为 On
-ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默认值时可省略，目前仅支持 REG_SZ、REG_DWORD、REG_EXPAND_SZ、REG_BINARY 的键值类型-->
+<!--
+- 每个程序一个 Group：
+Text 为 Group 项显示文本；
+GUID 用于判断用户是否安装此程序并决定是否显示该 Group，不设置 GUID 则为常驻菜单；
+RegPath 为程序相关注册表主路径。
+
+- 程序的相关菜单项目设置作为一个 Item 子元素：
+Item 的 Text 为该 Item 项显示文本；
+Tip 为鼠标悬浮在开关上时的提示信息；
+需要重启资源管理器生效则添加 RestartExplorer。
+
+- Item 的子元素：
+Rule 为相关注册表内容；
+RegPath 省略则默认为 Group 主路径，以 \ 开头则为 Group 主路径的子项路径；
+ValueName 为相关键名，On 为启用键值，Off 为禁用键值。不设置该属性，则对应注册表键值不存在；
+
+- 每个 Item 可能受多个注册表 Rule 影响，按照顺序进行键值判定：
+判定规则：当有多条规则时，前面的规则注册表键值匹配 On 则为 On，匹配 Off 则为 Off，并终止判断；
+都不匹配时继续往下判断，若所有规则都不匹配则为 On。
+ValueKind 属性为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默认值时可省略；
+目前支持的键值类型：REG_SZ、REG_DWORD、REG_EXPAND_SZ、REG_BINARY。
+-->
 
 <Data>
   <Group>
@@ -191,7 +207,7 @@ ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默�
       <Rule ValueName='shell_ShowSubmenu' On='1' Off='0'/>
     </Item>
     <Item>
-      <Text Value='隐藏Bandizip图标'/>
+      <Text Value='隐藏 Bandizip 图标'/>
       <Text Value='Hide Bandizip icon'>
         <Culture>en-US</Culture>
       </Text>
@@ -269,7 +285,7 @@ ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默�
       <Rule ValueName='shell_TestArchive' On='1' Off='0'/>
     </Item>
     <Item>
-      <Text Value='用Bandizip打开'/>
+      <Text Value='用 Bandizip 打开'/>
       <Text Value='Open with Bandizip'>
         <Culture>en-US</Culture>
       </Text>
@@ -331,14 +347,14 @@ ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默�
       <Rule ValueName='shell_useShellMenu' On='1' Off='0'/>
     </Item>
     <Item>
-      <Text Value='用 蜂蜜浏览器 转换图片'/>
+      <Text Value='用蜂蜜浏览器转换图片'/>
       <Text Value='Convert image with Honeyview'>
         <Culture>en-US</Culture>
       </Text>
       <Rule ValueName='shell_transformDlg' On='1' Off='0'/>
     </Item>
     <Item>
-      <Text Value='用 蜂蜜浏览器 浏览图片'/>
+      <Text Value='用蜂蜜浏览器浏览图片'/>
       <Text Value='View image with Honeyview'>
         <Culture>en-US</Culture>
       </Text>
@@ -523,7 +539,7 @@ ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默�
   </Group>
 
   <Group>
-    <Text Value='ACD看图'/>
+    <Text Value='ACD 看图'/>
     <Guid>c2396f1e-4ba2-4b7d-857a-f764761c012b</Guid>
     <RegPath>HKEY_CURRENT_USER\SOFTWARE\acdkantu</RegPath>
     <Item>
@@ -548,7 +564,7 @@ ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默�
   </Group>
 
   <Group>
-    <Text Value='360zip'/>
+    <Text Value='360 Zip'/>
     <Guid>9179176e-b763-3200-8500-bb1b90b3d5de</Guid>
     <FilePath>%AppData%\360zip\360zip_config.ini</FilePath>
     <IsIniGroup/>
@@ -575,7 +591,7 @@ ValueKind 为键值类型，默认键值类型 ValueKind 为 REG_DWORD，为默�
   </Group>
 
   <Group>
-    <Text Value='WPS云文档'/>
+    <Text Value='WPS 云文档'/>
     <Guid>67f4d210-bfc2-4add-9a2a-c9b9e1f42c4f</Guid>
     <RegPath>HKEY_CURRENT_USER\SOFTWARE\Kingsoft\WPSCloud</RegPath>
     <Item>
